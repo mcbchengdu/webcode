@@ -1,10 +1,14 @@
 #coding: utf-8
 
 from flask import Flask
+from flask.templating import render_template
 app = Flask(__name__)
 
+
+
+
 @app.route('/')
-def hello():
-    return 'Welcome to index'
+def index():
+    return render_template('index.html',name=name,movies=movies)
 
 
