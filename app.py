@@ -2,13 +2,21 @@
 
 from flask import Flask
 from flask.templating import render_template
-app = Flask(__name__)
+from flask_bootstrap import Bootstrap
 
+
+app = Flask(__name__)
+bootstrap=Bootstrap(app)
 
 
 
 @app.route('/')
 def index():
-    return render_template('index.html',name=name,movies=movies)
+    return render_template('index.html')
 
+
+
+@app.route('/test')
+def test():
+    return render_template('test.html')
 
